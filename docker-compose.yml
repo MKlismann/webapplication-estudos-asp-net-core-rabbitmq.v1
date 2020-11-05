@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  webapplication-estudos-asp-net-core-rabbitmq.v1:
+    image: ${DOCKER_REGISTRY-}webapplicationestudosaspnetcorerabbitmqv1
+    build:
+      context: .
+      dockerfile: webapplication-estudos-asp-net-core-rabbitmq.v1/Dockerfile
+    depends_on:
+      - rabbitmq
+  rabbitmq: # login guest:guest
+    image: rabbitmq:management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
