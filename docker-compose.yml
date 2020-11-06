@@ -9,7 +9,14 @@ services:
     depends_on:
       - rabbitmq
   rabbitmq: # login guest:guest
-    image: rabbitmq:management
+    image: rabbitmq:3-management
+    hostname: "rabbitmq"
+    labels:
+      NAME: "rabbitmq"
     ports:
-      - "15672:15672"
+      - "4369:4369"
+      - "5671:5671"
       - "5672:5672"
+      - "25672:25672"
+      - "15671:15671"
+      - "15672:15672"

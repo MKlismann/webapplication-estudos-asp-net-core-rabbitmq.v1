@@ -11,7 +11,7 @@ namespace webapplication_estudos_asp_net_core_rabbitmq.v1.IoC
     {
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
-            //docker run -d --hostname rabbit-local --name testes-rabbitmq -p 6672:5672 -p 15672:15672 -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:3-management-alpine
+            //docker run -d --hostname rabbitmq --name rabbitmq -p 6672:5672 -p 15672:15672 -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:3-management
             services.Configure<RabbitMqConfiguration>(configuration.GetSection(AppSettingsConstants.SECTION_RABBIT_MQ));
 
             services.AddTransient<IRabbitMqInfra, RabbitMqInfra>();

@@ -27,8 +27,6 @@ namespace webapplication_estudos_asp_net_core_rabbitmq.v1.Infra.Queues.RabbitMq
                 HostName = rabbitMqOptions.Value.Hostname,
                 UserName = rabbitMqOptions.Value.UserName,
                 Password = rabbitMqOptions.Value.Password
-                //VirtualHost = rabbitMqOptions.Value.VirtualHost,
-                //Port = Convert.ToInt32(rabbitMqOptions.Value.Port)
             };
         }
 
