@@ -25,8 +25,9 @@ namespace webapplication_estudos_asp_net_core_rabbitmq.v1.Infra.Queues.RabbitMq
             _connectionFactory = new ConnectionFactory
             {
                 HostName = rabbitMqOptions.Value.Hostname,
-                UserName = rabbitMqOptions.Value.UserName,
-                Password = rabbitMqOptions.Value.Password
+                UserName = ConnectionFactory.DefaultUser,
+                Password = ConnectionFactory.DefaultPass,
+                Port = AmqpTcpEndpoint.UseDefaultPort
             };
         }
 

@@ -7,12 +7,12 @@ services:
       context: .
       dockerfile: webapplication-estudos-asp-net-core-rabbitmq.v1/Dockerfile
     depends_on:
-      - rabbitmq
-  rabbitmq: # login guest:guest
+      - rabbitmqcompose
+  rabbitmqcompose: # login guest:guest
     image: rabbitmq:3-management
-    hostname: "rabbitmq"
+    hostname: "rabbitmqcompose"
     labels:
-      NAME: "rabbitmq"
+      NAME: "rabbitmqcompose"
     ports:
       - "4369:4369"
       - "5671:5671"
